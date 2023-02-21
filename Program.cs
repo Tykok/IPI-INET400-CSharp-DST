@@ -7,7 +7,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*
         WriteExercices(1);
         One.Run();
         Console.WriteLine();
@@ -23,8 +22,6 @@ class Program
         WriteExercices(4);
         Four.Run();
         Console.WriteLine();
-        
-        */
         
         WriteExercices(5);
         Five.Run();

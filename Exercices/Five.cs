@@ -33,14 +33,24 @@ public class Five
     
     private static void BatllePlayers()
     {
-        foreach (var player in listOfPlayer)
+        for(int i = 0; i <= 3; i++)
         {
-            var playerToPlay = listOfPlayer.Where(x => x != player).ToList();
-            foreach (var counter in playerToPlay)
+            foreach (var player in listOfPlayer)
             {
-                Console.WriteLine();
-                player.PlayWithAnotherPlayer(counter);
+                var playerToPlay = listOfPlayer.Where(x => x != player).ToList();
+                foreach (var counter in playerToPlay)
+                {
+                    Console.WriteLine();
+                    player.PlayWithAnotherPlayer(counter);
+                }
             }
+
+            var winnerOfTheMatch = listOfPlayer.MaxBy(x => x.ResultOfTheMatch);
+            winnerOfTheMatch.Score += winnerOfTheMatch.ResultOfTheMatch * 2;
+            Console.WriteLine("Winner of the match: " + winnerOfTheMatch.Name + " with " + winnerOfTheMatch.ResultOfTheMatch + " points");
+            
+            var loserOfTheMatch = listOfPlayer.FindAll(x => x != winnerOfTheMatch);
+            loserOfTheMatch.ForEach(x => x.Score += x.ResultOfTheMatch);
         }
     }
     

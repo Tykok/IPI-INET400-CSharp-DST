@@ -4,6 +4,7 @@ public class Player
 {
     private string name;
     private int score;
+    private int resultOfTheMatch;
     private static List<String> RockPaperScissors = new List<String>(){"Rock", "Paper", "Scissors"};
     
     public Player(string nameOfThePlayer)
@@ -23,6 +24,12 @@ public class Player
         get => score;
         set => score = value;
     }
+
+    public int ResultOfTheMatch
+    {
+        get => resultOfTheMatch;
+        set => resultOfTheMatch = value;
+    }
     
     private static int RandomNumber()
     {
@@ -37,12 +44,12 @@ public class Player
         
         if(WinRock(currentPlayer, otherPlayer) == true)
         {
-            score++;
+            ResultOfTheMatch++;
             Console.WriteLine($"{name} win the round with {currentPlayer} against {player.name} with {otherPlayer}");
         }
         else if(WinRock(otherPlayer, currentPlayer) == true)
         {
-            player.score++;
+            player.ResultOfTheMatch++;
             Console.WriteLine($"{player.name} win the round with {otherPlayer} against {name} with {currentPlayer}");
         }
         else
