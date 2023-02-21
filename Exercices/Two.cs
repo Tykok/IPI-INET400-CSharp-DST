@@ -22,6 +22,7 @@ public class Two
             numbers.Add(choosenNumber);
         } while (numbers.FindAll(x=> x == choosenNumber).Count() < 2);
         
+        numbers.Remove(choosenNumber);
         return numbers.Sum();
     }
 
