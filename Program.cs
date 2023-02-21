@@ -16,20 +16,18 @@ class Program
         Two.Run();
         Console.WriteLine();
         
+        WriteExercices(3);
+        Three.Run();
+        Console.WriteLine();
         
         WriteExercices(4);
         Four.Run();
         Console.WriteLine();
         
-        WriteExercices(5);
-        Five.Run();
         */
         
-        
-        WriteExercices(3);
-        Three.Run();
-        Console.WriteLine();
-        
+        WriteExercices(5);
+        Five.Run();
     }
 
     private static void WriteExercices(int exercices)
